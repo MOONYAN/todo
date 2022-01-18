@@ -1,0 +1,28 @@
+<mat-card>
+    <mat-card-header>
+        <mat-card-title>Create Item</mat-card-title>
+    </mat-card-header>
+    <mat-card-actions align="end">
+        <button mat-mini-fab color="primary" (click)="createDialog()">
+          <mat-icon>add_task</mat-icon>
+        </button>
+    </mat-card-actions>
+</mat-card>
+
+<mat-card>
+    <mat-card-header>
+        <mat-card-title>Todo Item</mat-card-title>
+    </mat-card-header>
+    <mat-card-content *ngIf="(todos$|async) as todos">
+        <app-todos [items]="todos" (deleteHandler)="deleteItem($event)" (toggleHandler)="toggleItem($event)"></app-todos>
+    </mat-card-content>
+</mat-card>
+
+<mat-card>
+  <mat-card-header>
+      <mat-card-title>Complete Item</mat-card-title>
+  </mat-card-header>
+  <mat-card-content *ngIf="(completes$|async) as todos">
+      <app-todos [items]="todos" (deleteHandler)="deleteItem($event)" (toggleHandler)="toggleItem($event)"></app-todos>
+  </mat-card-content>
+</mat-card>
