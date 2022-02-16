@@ -15,3 +15,8 @@
 
 ## Result
 ![demo](demo/demo.gif)
+
+## Build custom component
+
+- `<app-container></app-container>`
+- needed include manually css `<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">`
